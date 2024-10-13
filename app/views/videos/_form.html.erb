@@ -1,0 +1,15 @@
+<%= form_with(model: @video) do |form| %>
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :course_id, { value: @course.id } %>
+    <%= form.file_field :video %>
+  </div>
+
+  <div>
+    <%= form.submit class: "mt-2 rounded-lg py-3 px-5 bg-blue-100 inline-block font-medium"  %>
+  </div>
+<% end %>

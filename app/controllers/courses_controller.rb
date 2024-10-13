@@ -8,6 +8,8 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    # @video = @course.videos.build
+    @videos = @course.videos
   end
 
   # GET /courses/new
