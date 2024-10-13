@@ -1,7 +1,7 @@
 <div id="<%= dom_id video %>">
   <p>
     <strong class="block font-medium mb-1">
-      <%= "#{video_counter+1} - #{video.title}" %>
+      <%= link_to "#{video_counter+1} - #{video.title}", video_path(video) %>
     </strong>
   </p>
 </div>

@@ -1,6 +1,11 @@
 class VideosController < ApplicationController
+  before_action :set_course, only: %i[ index ]
+  before_action :set_video, only: %i[ show ]
   def index
     @videos = @course.videos
+  end
+
+  def show
   end
 
   def create
@@ -25,8 +30,11 @@ class VideosController < ApplicationController
     params.require(:video).permit(:title, :video, :course_id)
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_course
-    @course = Course.find(params[:id])
+    @course = Course.find(params[:course_id])
+  end
+
+  def set_video
+    @video = Video.find(params[:id])
   end
 end
