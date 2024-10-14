@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :courses
+  resources :courses do
+    resources :videos, only: %i[index new create destroy]
+  end
   resources :videos
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

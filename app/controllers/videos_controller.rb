@@ -1,11 +1,15 @@
 class VideosController < ApplicationController
-  before_action :set_course, only: %i[ index ]
+  before_action :set_course, only: %i[ index new ]
   before_action :set_video, only: %i[ show ]
   def index
     @videos = @course.videos
   end
 
   def show
+  end
+
+  def new
+    @video = @course.videos.new
   end
 
   def create

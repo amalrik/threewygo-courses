@@ -1,7 +1,8 @@
 <div id="<%= dom_id video %>">
-  <p>
+  <% even_or_odd = (video_counter % 2 == 0) ? "even" : "odd" %>
+  <li class="#{even_or_odd}:bg-gray-50">
     <strong class="block font-medium mb-1">
       <%= link_to "#{video_counter+1} - #{video.title}", video_path(video) %>
     </strong>
-  </p>
+  </li>
 </div>
